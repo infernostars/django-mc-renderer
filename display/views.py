@@ -8,8 +8,8 @@ from PIL import Image, ImageDraw, ImageFont
 
 def generator(request):
     qd = request.GET
-    x = int(qd.get("x", 250))
-    y = int(qd.get("y", 250))
+    x = min(2048, int(qd.get("x", 250)))
+    y = min(2048, int(qd.get("y", 250)))
     color = qd.get("color", "192,192,192")
     color = tuple(map(int, color.split(',')))
     text = str(qd.get("text", f"{x} x {y}"))
