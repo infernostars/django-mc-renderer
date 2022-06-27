@@ -18,6 +18,5 @@ from django.urls import include, path
 
 urlpatterns = [
     path('display/', include('display.urls')),
-    path('mc/', include('minecraft.urls')),
     path('admin/', admin.site.urls),
 ]

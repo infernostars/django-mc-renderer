@@ -15,7 +15,7 @@ def generator(request):
     text = str(qd.get("text", f"{x} x {y}"))
     image = Image.new('RGB', (x, y), color)
     draw = ImageDraw.Draw(image)
-    font = ImageFont.truetype('display/minecraft_font.ttf', size=24)
+    font = ImageFont.truetype('display/fonts/SourceSansPro-Regular.ttf', size=24)
     draw.text((x/2, y/2), text, font=font, anchor="mm", fill=tuple(round(cr/2) for cr in color))
     response = HttpResponse(content_type="image/png")
     image.save(response, "PNG")
