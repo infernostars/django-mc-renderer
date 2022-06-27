@@ -12,7 +12,7 @@ def generator(request):
     y = min(2048, int(qd.get("y", 250)))
     color = qd.get("color", "192,192,192")
     color = tuple(map(int, color.split(',')))
-    text = str(qd.get("text", f"{x} x {y}"))
+    text = str(qd.get("text", f"{x} × {y}"))
     image = Image.new('RGB', (x, y), color)
     draw = ImageDraw.Draw(image)
     font = ImageFont.truetype('display/fonts/SourceSansPro-Regular.ttf', size=24)
