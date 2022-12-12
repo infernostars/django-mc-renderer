@@ -15,6 +15,7 @@ def generator(request):
     y = min(2048, int(qd.get("y", 250)))
     color = qd.get("color", "192,192,192")
     color = tuple(map(int, color.split(',')))
+    text_color = tuple(round(cr/2-15) for cr in color) if sum(color)/len(color) > 127 else tuple(round(cr*1.5+15) for cr in color)
     text = str(qd.get("text", f"{x} × {y}"))
     font = str(qd.get("font", "serif"))
     image = Image.new('RGB', (x, y), color)
